@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Macronutrientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Calculadora de Macronutrientes</h2>
+    <label for="calorias">Calorias totais por dia:</label>
+    <input type="number" id="calorias" placeholder="Ex: 2000">
+    
+    <label for="carb">Carboidratos (%):</label>
+    <input type="number" id="carb" placeholder="Ex: 50">
+    
+    <label for="prot">Proteínas (%):</label>
+    <input type="number" id="prot" placeholder="Ex: 30">
+    
+    <label for="gord">Gorduras (%):</label>
+    <input type="number" id="gord" placeholder="Ex: 20">
+
+    <button onclick="calcularMacros()">Calcular</button>
+
+    <h3>Resultados:</h3>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMacros() {
+            let calorias = parseFloat(document.getElementById("calorias").value);
+            let carb = parseFloat(document.getElementById("carb").value);
+            let prot = parseFloat(document.getElementById("prot").value);
+            let gord = parseFloat(document.getElementById("gord").value);
+
+            if (carb + prot + gord !== 100) {
+                document.getElementById("resultado").innerHTML = "A soma dos macronutrientes deve ser 100%!";
+                return;
+            }
+
+            let gramasCarb = (calorias * (carb / 100)) / 4;
+            let gramasProt = (calorias * (prot / 100)) / 4;
+            let gramasGord = (calorias * (gord / 100)) / 9;
+
+            document.getElementById("resultado").innerHTML = `
+                Carboidratos: ${gramasCarb.toFixed(1)}g<br>
+                Proteínas: ${gramasProt.toFixed(1)}g<br>
+                Gorduras: ${gramasGord.toFixed(1)}g
+            `;
+        }
+    </script>
+    <a href="INDEXx.HTML">1</a>
+    <div class="caixa-relevo">
+        <p>
+            peixe grande
+        </p>
+    </div>
+</body>
+</html>

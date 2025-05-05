@@ -1,0 +1,44 @@
+<label for="peso">Peso (kg):</label>
+<input type="number" id="peso" placeholder="Digite seu peso">
+
+<button onclick="mostrarAgua()">Calcular Água</button>
+
+<p id="resultado"></p>
+<style>
+    label{
+        color: chocolate;
+        text-align: center;
+        border-radius: 10px;
+        border: 1px;
+        max-width: 400px;
+        box-shadow: 2px 2px 2px;
+    }
+    input{
+        color: aliceblue;
+        text-align: center;
+    }
+        button{
+            color: brown;
+            text-align: center;
+        }
+    
+</style>
+
+<script>
+    function calcularAgua(peso) {
+        if (peso <= 0 || isNaN(peso)) {
+            return "Por favor, insira um peso válido.";
+        }
+
+        let agua = peso * 35;
+        return `Você deve beber aproximadamente ${agua} ml de água por dia.`;
+    }
+
+    function mostrarAgua() {
+        let peso = parseFloat(document.getElementById("peso").value);
+        let resultado = calcularAgua(peso);
+        document.getElementById("resultado").innerText = resultado;
+    }
+</script>
+
+

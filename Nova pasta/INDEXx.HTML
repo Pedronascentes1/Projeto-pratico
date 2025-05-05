@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC, Dieta e Alimentos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #resultado, #dieta {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .tabela-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        resultado1{
+            text-align: center;
+        }
+        resultado2{
+            text-align: center;
+        } 
+          p1{
+            position: relative;
+            top: 145px;
+            left: 490px
+          }
+          body{
+            background-color: rgb(255, 255, 255);
+          }
+          h1{
+            text-align: center;
+            color: #218838;
+          }
+    </style>
+</head>
+<body>
+     <h1>IMC,DIETAS E ALIMENTOS</h1>
+    <p1>
+        O Índice de Massa Corporal (IMC) é uma ferramenta importante  
+        <br>
+        para avaliar se uma pessoa está dentro de uma faixa de peso 
+        <br>
+         saudável em relação à sua altura. Ele é calculado dividindo 
+         <br> 
+         o peso (em kg) pelo quadrado da altura (em metros). 
+         <br
+         >Embora seja uma medida simples, o IMC pode ajudar a 
+         <br>
+          identificar riscos para a saúde associados ao peso corporal.
+     </p1>
+    <div class="container">
+        <h2>Calculadora de IMC e Dieta</h2>
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" placeholder="Digite seu peso">
+
+        <label for="altura">Altura (m):</label>
+        <input type="number" step="0.01" id="altura" placeholder="Digite sua altura">
+
+        <button onclick="calcularIMC()">Calcular IMC e Dieta</button>
+
+        <p id="resultado"></p>
+        <p id="dieta"></p>
+    </div>
+    <fieldset>
+    </fieldset>
+    <div class="container"> 
+        <label for="peso0">Peso(kg):</label>
+        <input type="number" id="peso0" placeholder="Digite seu peso">
+
+        <button onclick="mostrarAgua()">Calcular Água</button>
+<br>
+
+<p id="resultado1"></p>
+    </div>
+</fieldset>
+    <div class="tabela-container">
+        <h2>Tabela de Alimentos e Carboidratos (por 100g)</h2>
+        <table>
+            <tr>
+                <th>Alimento</th>
+                <th>Carboidratos (g)</th>
+            </tr>
+            <tr>
+                <td>Arroz branco</td>
+                <td>28g</td>
+            </tr>
+            <tr>
+                <td>Batata doce</td>
+                <td>20g</td>
+            </tr>
+            <tr>
+                <td>Pão integral</td>
+                <td>43g</td>
+            </tr>
+            <tr>
+                <td>Aveia</td>
+                <td>66g</td>
+            </tr>
+            <tr>
+                <td>Feijão preto</td>
+                <td>14g</td>
+            </tr>
+            <tr>
+                <td>Banana</td>
+                <td>23g</td>
+            </tr>
+            <tr>
+                <td>Maçã</td>
+                <td>13g</td>
+            </tr>
+            <tr>
+                <td>Frango (peito)</td>
+                <td>0g</td>
+            </tr>
+            <tr>
+                <td>Ovos</td>
+                <td>1g</td>
+            </tr>
+            <tr>
+                <td>Abacate</td>
+                <td>9g</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function calcularIMC() {
+            let peso = parseFloat(document.getElementById("peso").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+
+            if (isNaN(peso) || isNaN(altura) || altura <= 0 || peso <= 0) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira valores válidos.";
+                document.getElementById("dieta").innerHTML = "";
+                return;
+            }
+
+            let imc = peso / (altura * altura);
+            let classificacao = "";
+            let dieta = "";
+
+            if (imc < 18.5) {
+                classificacao = "Abaixo do peso";
+                dieta = "Recomendação: Consuma mais proteínas (frango, ovos, peixes), carboidratos saudáveis (arroz, batata, aveia) e gorduras boas (abacate, azeite, castanhas). Faça musculação.";
+            } else if (imc >= 18.5 && imc < 24.9) {
+                classificacao = "Peso ideal";
+                dieta = "Recomendação: Mantenha uma alimentação equilibrada com proteínas, carboidratos e gorduras saudáveis. Pratique exercícios regularmente.";
+            } else if (imc >= 25 && imc < 29.9) {
+                classificacao = "Sobrepeso";
+                dieta = "Recomendação: Reduza açúcares e carboidratos refinados. Priorize proteínas magras, vegetais e gorduras saudáveis. Faça exercícios regularmente.";
+            } else {
+                classificacao = "Obesidade";
+                dieta = "Recomendação: Consulte um nutricionista. Evite ultraprocessados, consuma mais fibras e proteínas e pratique atividades físicas.";
+            }
+
+            document.getElementById("resultado").innerHTML = `Seu IMC é: ${imc.toFixed(2)} (${classificacao})`;
+            document.getElementById("dieta").innerHTML = dieta;
+        
+        }
+    </script>
+    <script>
+        function calcularAgua(peso0) {
+        if (peso0 <= 0 || isNaN(peso0)) {
+            return "Por favor, insira um peso válido.";
+        }
+
+        let agua = peso0 * 35;
+        return `Você deve beber aproximadamente ${agua} ml de água por dia.`;
+    }
+    function mostrarAgua() {
+        let peso0 = parseFloat(document.getElementById("peso0").value);
+        let resultado = calcularAgua(peso0);
+        document.getElementById("resultado1").innerText = resultado;
+    }
+    </script>
+    <div style="text-align: center;">
+        <img src="img/jpg/th.jpeg">
+    </div>
+     <img src="img/jpg/th (1).jpeg" style="position: absolute; bottom: 210px; left: 48px;" width="490" height="300">
+    <h2>Calculadora de Carboidratos</h2>
+
+    <label for="alimento">Escolha um alimento:</label>
+    <select id="alimento">
+        <option value="banana" data-carb="22">Banana (22g por 100g)</option>
+        <option value="arroz" data-carb="28">Arroz cozido (28g por 100g)</option>
+        <option value="pao" data-carb="50">Pão (50g por 100g)</option>
+        <option value="batata" data-carb="17">Batata (17g por 100g)</option>
+        <option value="farinha de milho" data-carb="79">Farinha de milho (79g por 100g)</option>
+        <option value="farinha de trigo branca" data-carb="75">Arroz cozido (75g por 100g)</option>
+        <option value="pao frances branco" data-carb="59">Pão frances branco (58g por 100g)</option>
+        <option value="macarrao branco cozido" data-carb="31">Macarrao branco cozido (31g por 100g)</option>
+        <option value="macarrao integral cozido" data-carb="30">Macarrao integral cozido (30g por 100g)</option>
+        <option value="feijao preto cozido" data-carb="14">Feijao preto cozido (14g por 100g)</option>
+        <option value="lentilha cozida" data-carb="16">Lentilha cozida (16g por 100g)</option>
+        <option value="tamarindo" data-carb="72">Tamarindo (72g por 100g)</option>
+        <option value="pinha" data-carb="75">Pinha (75g por 100g)</option>
+        <option value="uva" data-carb="14">Uva (13g por 100g)</option>
+        <option value="jaca" data-carb="22">Jaca (22g por 100g)</option>
+        <option value="manga" data-carb="19">Manga (28g por 100g)</option>
+        <option value="mamao" data-carb="10">Mamao (10g por 100g)</option>
+        <option value="pera" data-carb="14">Pera (14g por 100g)</option>
+        <option value="maca" data-carb="15">Maça (15g por 100g)</option>
+        <option value="aipim cozido" data-carb="30">Aipim cozido (30g por 100g)</option>
+        <option value="beterraba crua" data-carb="11">Beterraba crua (11g por 100g)</option>
+        <option value="vagem cozida" data-carb="12">Vagem cozida (12g por 100g)</option>
+        <option value="cara cozido" data-carb="19">Cará cozido (19g por 100g)</option>
+        <option value="abobora cozida" data-carb="11">Abóbora cozida (14g por 100g)</option>
+        <option value="ervilha" data-carb="14">Ervilha (14g por 100g)</option>
+        <option value="alho" data-carb="24">Alho (24g por 100g)</option>
+        <option value="polvilho" data-carb="87">Polvilho (87g por 100g)</option>
+        <option value="pipoca" data-carb="70">Pipoca (70g por 100g)</option>
+        <option value="tapioca" data-carb="64">Tapioca (64g por 100g)</option>
+        <option value="leite de vaca integral" data-carb="9">Leite de vaca integral (9g por 100g)</option>
+        <option value="ovo cozido" data-carb="1">Ovo cozido (1g por 100g)</option>
+        <option value="melancia" data-carb="8">Melancia (8g por 100g)</option>
+        <option value="Abacaxi" data-carb="8">Abacaxi (8g por 100g)</option>
+        <option value="cenoura cozida" data-carb="7">Cenoura cozida (7g por 100g)</option>
+        <option value="morango" data-carb="7">Morango (7g por 100g)</option>
+        <option value="melao" data-carb="8">Melão (7g por 100g)</option>
+        <option value="pessego" data-carb="9">Pêssego (7g por 100g)</option>
+        <option value="jabuticaba" data-carb="15">Jabuticaba (15g por 100g)</option>
+        <option value="ameixa" data-carb="14">Ameixa (14g por 100g)</option>
+        <option value="caqui" data-carb="19">Caqui (19g por 100g)</option>
+        <option value="Cereja" data-carb="16">Cereja (16g por 100g)</option>
+    </select>
+    <br><br>
+    <label for="quantidade">Quantidade consumida (g):</label>
+    <input type="number" id="quantidade" value="100">
+    <br><br>
+    <button onclick="calcularCarboidratos()">Calcular</button>
+    <p id="resultado2"></p>
+    <script>
+        function calcularCarboidratos() {
+            var alimentoSelecionado = document.getElementById("alimento");
+            var carboidratosPor100g = alimentoSelecionado.options[alimentoSelecionado.selectedIndex].getAttribute("data-carb");
+            var quantidade = document.getElementById("quantidade").value;
+            var totalCarboidratos = (quantidade * carboidratosPor100g) / 100;
+            document.getElementById("resultado2").innerText = "Total de carboidratos: " + totalCarboidratos.toFixed(2) + "g";
+        }
+    </script>
+ <a href="index4.html" title="Calculadora DE MACRONUTRIENTE" >2</a>
+ <a href="index.html">Home</a>
+
+</div>
+
+</body>
+</html>
