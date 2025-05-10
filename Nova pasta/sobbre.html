@@ -1,90 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>Sobre Nós</title>
-<style>
-  /* Reset & base */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  header {
-    background: linear-gradient(135deg, #000, #000);
-    color: white;
-    padding: 20px 15px;
-    text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-  header h1 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 1.8rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-  }
-  main {
-    flex: 1 0 auto;
-    padding: 20px 15px;
-  }
-  section.about {
-    margin-bottom: 25px;
-  }
-  section.about h2 {
-    font-size: 1.4rem;
-    color: #000;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #000;
-    padding-bottom: 5px;
-  }
-  section.about p {
-    font-size: 1rem;
-    color: #4a4a4a;
-    
-  footer {
-    background: #357ab7;
-    color: white;
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.9rem;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    flex-shrink: 0;
-  }
- 
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Sobre Nós</title>
+    <style>
+        /* Reset & base */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        header {
+            background: linear-gradient(135deg, #000, #000);
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            user-select: none;
+        }
+        /* Back arrow link */
+        .back-arrow {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            user-select: none;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.6);
+            transition: background 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .back-arrow:hover,
+        .back-arrow:focus {
+            background: rgba(0, 0, 0, 0.8);
+            outline: none;
+        }
+        main {
+            flex: 1 0 auto;
+            padding: 20px 15px;
+            margin-top: 10px; /* small margin so content is not hidden behind fixed arrow */
+        }
+        section.about {
+            margin-bottom: 25px;
+        }
+        section.about h2 {
+            font-size: 1.4rem;
+            color: #000;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+        }
+        section.about p {
+            font-size: 1rem;
+            color: #4a4a4a;
+        }
+        footer {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 0.9rem;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            flex-shrink: 0;
+        }
+        /* Mobile optimization: ensure entire page fits without scroll */
+        @media (max-width: 350px) {
+            body {
+                max-width: 100vw;
+            }
+            .back-arrow {
+                top: 8px;
+                left: 8px;
+                font-size: 1.6rem;
+                width: 34px;
+                height: 34px;
+            }
+            header {
+                padding: 18px 12px;
+            }
+            main {
+                padding: 18px 12px;
+                margin-top: 10px;
+            }
+            footer {
+                padding: 12px 8px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <h1>Sobre Nós</h1>
-</header>
-<main>
-  <section class="about" aria-label="Sobre a nossa empresa">
-    <h2>Quem Somos</h2>
-    <p>Somos uma empresa especializada em promover saúde e bem-estar por meio de orientações nutricionais personalizadas, 
-     com foco em resultados reais e duradouros — especialmente na perda de peso de forma saudável.
-    Nosso site foi pensado para facilitar sua rotina e tornar o processo de emagrecimento mais simples e eficiente. 
-     Aqui, você encontra planos alimentares personalizados, dicas práticas, receitas saudáveis e ferramentas 
-    que ajudam no acompanhamento do seu progresso. Tudo isso para tornar seu dia a dia mais leve, organizado e com foco nos seus objetivos.
-    Conte com a Life Light para transformar sua alimentação e alcançar o equilíbrio que você merece!</p>
-</main>
-<footer>
-  &copy; 2025 Nossa Empresa. Todos os direitos reservados.
-</footer>
+    <a href="index.html" class="back-arrow" aria-label="Voltar para a página inicial">&#x2190;</a>
+    <header>
+        <h1>Sobre Nós</h1>
+    </header>
+    <main>
+        <section class="about" aria-label="Sobre a nossa empresa">
+            <h2>Quem Somos</h2>
+            <p>Somos uma empresa especializada em promover saúde e bem-estar por meio de orientações nutricionais personalizadas, 
+            com foco em resultados reais e duradouros — especialmente na perda de peso de forma saudável.
+            Nosso site foi pensado para facilitar sua rotina e tornar o processo de emagrecimento mais simples e eficiente. 
+            Aqui, você encontra planos alimentares personalizados, dicas práticas, receitas saudáveis e ferramentas 
+            que ajudam no acompanhamento do seu progresso. Tudo isso para tornar seu dia a dia mais leve, organizado e com foco nos seus objetivos.
+            Conte com a Life Light para transformar sua alimentação e alcançar o equilíbrio que você merece!</p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 Nossa Empresa. Todos os direitos reservados.
+    </footer>
 </body>
 </html>
-</content>
-</create_file>
