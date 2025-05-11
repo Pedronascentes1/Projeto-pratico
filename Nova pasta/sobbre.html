@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="description" content="A Life Light é uma empresa especializada em promover saúde e bem-estar através de orientações nutricionais personalizadas.">
     <title>Sobre Nós</title>
     <style>
-        /* Reset & base */
+       
         * {
             box-sizing: border-box;
         }
@@ -14,18 +15,19 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #f5f7fa;
             color: #333;
-            line-height: 1.6;
+            line-height: 1.7;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            max-width: 350px;
+            max-width: 1600px;
             margin-left: auto;
             margin-right: auto;
+            font-size: 20px;
         }
         header {
             background: linear-gradient(135deg, #000, #000);
             color: white;
-            padding: 20px 15px;
+            padding: 40px 60px;
             text-align: center;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
@@ -34,69 +36,80 @@
         header h1 {
             margin: 0;
             font-weight: 700;
-            font-size: 1.8rem;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            font-size: 3.2rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.25);
             user-select: none;
         }
-        /* Back arrow link */
         .back-arrow {
             position: fixed;
-            top: 10px;
-            left: 10px;
+            top: 24px;
+            left: 24px;
             text-decoration: none;
             color: white;
-            font-size: 1.8rem;
+            font-size: 2.8rem;
             font-weight: bold;
             user-select: none;
-            width: 36px;
-            height: 36px;
+            width: 52px;
+            height: 52px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 6px;
+            border-radius: 10px;
             background: rgba(0, 0, 0, 0.6);
             transition: background 0.3s ease;
             z-index: 1000;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.35);
         }
         .back-arrow:hover,
         .back-arrow:focus {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             outline: none;
         }
         main {
             flex: 1 0 auto;
-            padding: 20px 15px;
-            margin-top: 10px; /* small margin so content is not hidden behind fixed arrow */
+            padding: 50px 70px;
+            margin-top: 25px; 
+            max-width: 100%;
         }
         section.about {
-            margin-bottom: 25px;
+            margin-bottom: 50px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
         section.about h2 {
-            font-size: 1.4rem;
+            font-size: 2.4rem;
             color: #000;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #000;
-            padding-bottom: 5px;
+            margin-bottom: 20px;
+            border-bottom: 4px solid #000;
+            padding-bottom: 10px;
         }
         section.about p {
-            font-size: 1rem;
+            font-size: 1.25rem;
             color: #4a4a4a;
+            text-align: justify;
         }
         footer {
             background: #000;
             color: white;
             text-align: center;
-            padding: 15px 10px;
-            font-size: 0.9rem;
+            padding: 25px 20px;
+            font-size: 1.1rem;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             flex-shrink: 0;
         }
-        /* Mobile optimization: ensure entire page fits without scroll */
-        @media (max-width: 350px) {
+        @media (max-width: 400px) {
             body {
                 max-width: 100vw;
+                font-size: 16px;
+                padding: 0;
+            }
+            header {
+                padding: 18px 12px;
+            }
+            header h1 {
+                font-size: 1.8rem;
             }
             .back-arrow {
                 top: 8px;
@@ -104,13 +117,26 @@
                 font-size: 1.6rem;
                 width: 34px;
                 height: 34px;
-            }
-            header {
-                padding: 18px 12px;
+                border-radius: 6px;
             }
             main {
                 padding: 18px 12px;
                 margin-top: 10px;
+                padding-bottom: 30px;
+            }
+            section.about {
+                max-width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 25px;
+            }
+            section.about h2 {
+                font-size: 1.4rem;
+                border-bottom: 2px solid #000;
+                padding-bottom: 5px;
+            }
+            section.about p {
+                font-size: 1rem;
             }
             footer {
                 padding: 12px 8px;
