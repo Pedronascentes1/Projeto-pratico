@@ -1,0 +1,15 @@
+.dark-mode {
+    --primary-color: #81C784;
+    --secondary-color: #4CAF50;
+    --text-color: #f0f0f0;
+    --bg-color: #121212;
+    --card-color: #1E1E1E;
+    --shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.dark-mode .feature-card,
+.dark-mode .imc-calculator,
+.dark-mode .login-form,
+.dark-mode .contact-card {
+    border: 1px solid #333;
+}

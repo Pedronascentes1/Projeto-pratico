@@ -2,90 +2,46 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Life Light</title>
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="icon" href="img/aea4d3b0dcf39f44d2143c71de0061bb.png">
-    <style>
-         header {
-            background: linear-gradient(135deg, #000, #000);
-            color: white;
-            padding: 40px 60px;
-            text-align: center;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-weight: 700;
-            font-size: 3.2rem;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.25);
-            user-select: none;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Light - Nutrição Inteligente</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="darkModeStyle" disabled>
 </head>
 <body>
-    
-
-    <header class="cabecalho">
-        <div class="logo">
-            <div class="icone"></div>
-            <img width="150" height="150" src="img/logo.png" alt="">
-            <h1>LIFE <span>LIGHT</span></h1>
-        </div>
-        <div class="imagem-prato">
-            
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="img/logo.png" alt="Life Light Logo">
+                <span>Life Light</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="imc.html">Calculadora IMC</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" id="themeToggle">🌓</button>
         </div>
     </header>
 
-     <div class="container">
-        <input type="checkbox" id="checkbox-menu">
-        <label for="checkbox-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-        </label>
-        <nav class="menu">
-            <ul>
-              <li><a href="index4.html">Macronutrientes</a></li>
-              <br>
-              <li><a href="sobbre.html">Sobre</a></li>
-             <br>
-              <li><a href="INDEXx.HTML">CALCULADORAS</a></li>
-             <br>
-              <li><a href="contato.html">Contato</a></li>
-            </ul>
-          </nav>
-    </div>
-
-    <section class="noticias">
-        <h2>NOTÍCIAS</h2>
-        <div class="cards">
-
-            <div class="card">
-                <img src="img/76fe5f94c3cf4267244195c19be78536.png" alt="Água tônica">
-                <h3>Água tônica faz bem ou mal? Nutricionista responde.</h3>
-                <p>A água tônica pode ser boa em moderação, pois contém quinina, que ajuda em câimbras. Mas a versão comum tem açúcar, e a quinina pode causar efeitos colaterais em pessoas sensíveis. Como tudo, o segredo está no equilíbrio.</p>
-                <a href="https://www.cnnbrasil.com.br/saude/agua-tonica-faz-mal-ou-bem-nutricionista-responde/">ler mais +++</a>
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Nutrição Inteligente para uma Vida Saudável</h1>
+                <p>Descubra o poder da alimentação balanceada e transforme sua saúde com a Life Light</p>
+                <a href="imc.html" class="btn">Calcule seu IMC</a>
             </div>
+        </section>
+    </main>
 
-            <div class="card">
-                <img src="img/659b2fe586475a5f1db92fc1a63f59d2.png" alt="Leite">
-                <h3>Por que o leite não deve ser banido do seu cardápio, segundo a ciência.</h3>
-                <p>Porque ele não é inflamatório, e elimina o risco de quedas que afetam a saúde dos ossos e do corpo em geral. Para a maioria das pessoas, ele faz bem se consumido com moderação.</p>
-                <a href="https://www.cnnbrasil.com.br/saude/por-que-o-leite-nao-deve-ser-banido-do-seu-cardapio-segundo-a-ciencia/">ler mais +++</a>
-            </div>
-
-            <div class="card">
-                <img src="img/b84aa283f582c4778e35b4ec868bce5a.jpeg" alt="Chia">
-                <h3>Chia emagrece?</h3>
-                <p>As sementes de chia podem ajudar no emagrecimento porque são ricas em fibras, que aumentam a saciedade, e têm poucas calorias. Mas sozinhas, não fazem milagres – precisam estar acompanhadas de uma alimentação equilibrada e exercícios.</p>
-                <a href="https://www.tuasaude.com/chia-emagrece/">ler mais +++</a>
-            </div>
-
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Life Light - Todos os direitos reservados</p>
         </div>
-    </section>
+    </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
