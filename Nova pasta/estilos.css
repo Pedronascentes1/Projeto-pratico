@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
 }
 
 .cabecalho {
@@ -47,8 +47,8 @@ body {
 .noticias h2::after {
     content: '';
     display: inline-block;
-    width: 60px;
-    height: 2px;
+    width: 200px;
+    height: 4px;
     background: #333;
     margin: 0 15px;
     vertical-align: middle;
@@ -62,12 +62,12 @@ body {
 }
 
 .card {
-    background: white;
+   
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     width: 300px;
-    text-align: left;
+    text-align: center;
 }
 
 .card img {
@@ -103,69 +103,10 @@ body {
     align-items: center;
     justify-content: center;
 }
-#checkbox-menu{
-    position: relative;
-    opacity: 0;
-}
-label{
-    cursor: pointer;
-    position: relative;
-    display: block;
-    height: 22px;
-    width: 30px;
-}
-label span{
-    position:absolute;
-    display: block;
-    height: 5px;
-    width: 100%;
-    border-radius: 30px;
-    background: #f16234;
-    transition: 0.25 ease-in-out;
-}
-label span:nth-child(1){
-    top: 0;
-}
-label span:nth-child(2){
-    top: 8px;
-}
-label span:nth-child(3){
-    top: 16px;
-}
-#checkbox-menu:checked + label span:nth-child(1){
-transform: rotate(-45deg);
-top: 8px;
-}
-#checkbox-menu:checked + label span:nth-child(2){
-    opacity: 0;
-}
-#checkbox-menu:checked + label span:nth-child(3){
-    transform: rotate(45deg);
-top: 8px;
-}
-.menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 200px;
-    background: rgb(0, 0, 0);
-    display: none;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    z-index: 999;
-  }
-  #checkbox-menu:checked ~ .menu {
-    display: block;
-  }
-  label[for="checkbox-menu"] {
-    position: absolute;
-    top: 15px;      /* menor valor sobe mais */
-    left: 20px;     /* ajuste horizontal */
-    cursor: pointer;
-    z-index: 1000;  /* garante que fique acima da imagem */
-  }
   a{
     text-decoration: none;
     color: rgb(255, 255, 255);
   }
+  
+
+  
