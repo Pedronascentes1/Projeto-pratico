@@ -1,19 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+  <meta charset="UTF-8">
+  <title>Calculadora de IMC com Idade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    input, button {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <h1>Celulares para contato</h1>
-    <p>(34)999126661: FALAR COM PEDRO SOBRE DUVIDAS DO SITE</p>
-    
 
+  <h2>Calculadora de IMC com Idade</h2>
 
+  <label for="peso">Peso (kg):</label>
+  <input type="number" id="peso" placeholder="Ex: 70" step="0.1">
 
+  <label for="altura">Altura (m):</label>
+  <input type="number" id="altura" placeholder="Ex: 1.75" step="0.01">
 
+  <label for="idade">Idade:</label>
+  <input type="number" id="idade" placeholder="Ex: 25">
 
+  <button onclick="calcularIMC()">Calcular IMC</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function calcularIMC() {
+      const peso = parseFloat(document.getElementById('peso').value);
+      const altura = parseFloat(document.getElementById('altura').value);
+      const idade = parseInt(document.getElementById('idade').value);
+      const resultado = document.getElementById('resultado');
+
+      if (isNaN(peso) || isNaN(altura) || isNaN(idade)) {
+        resultado.textContent = "Por favor, preencha todos os campos corretamente.";
+        return;
+      }
+
+      const imc = peso / (altura * altura);
+      let classificacao = "";
+
+      if (idade < 18) {
+        classificacao = "Consulte um pediatra para uma avaliação mais precisa, pois o IMC para menores de idade depende de curvas de crescimento.";
+      } else if (idade >= 18 && idade <= 65) {
+        if (imc < 18.5) {
+          classificacao = "Abaixo do peso";
+        } else if (imc < 24.9) {
+          classificacao = "Peso normal";
+        } else if (imc < 29.9) {
+          classificacao = "Sobrepeso";
+        } else {
+          classificacao = "Obesidade";
+        }
+      } else {
+  
+        if (imc < 22) {
+          classificacao = "Abaixo do peso para idosos";
+        } else if (imc <= 27) {
+          classificacao = "Peso adequado para idosos";
+        } else {
+          classificacao = "Acima do peso para idosos";
+        }
+      }
+
+      resultado.innerHTML = `Seu IMC é <strong>${imc.toFixed(2)}</strong><br>${classificacao}`;
+    }
+  </script>
 
 </body>
 </html>
+
