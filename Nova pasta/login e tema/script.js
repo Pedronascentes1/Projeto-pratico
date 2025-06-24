@@ -25,7 +25,7 @@ if (document.getElementById('loginForm')) {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        // Simulação de autenticação (em um projeto real, use um backend!)
+        // Simulação de autenticação 
         if (username && password) {
             localStorage.setItem('currentUser', username);
             window.location.href = 'home.html';
