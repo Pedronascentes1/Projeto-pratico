@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMC, Dieta e Alimentos</title>
+    <title>Calculadoras</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -82,35 +82,6 @@
     </style>
 </head>
 <body>
-     <h1>IMC,DIETAS E ALIMENTOS</h1>
-    <p1>
-        O Índice de Massa Corporal (IMC) é uma ferramenta importante  
-        <br>
-        para avaliar se uma pessoa está dentro de uma faixa de peso 
-        <br>
-         saudável em relação à sua altura. Ele é calculado dividindo 
-         <br> 
-         o peso (em kg) pelo quadrado da altura (em metros). 
-         <br
-         >Embora seja uma medida simples, o IMC pode ajudar a 
-         <br>
-          identificar riscos para a saúde associados ao peso corporal.
-     </p1>
-    <div class="container">
-        <h2>Calculadora de IMC e Dieta</h2>
-        <label for="peso">Peso (kg):</label>
-        <input type="number" id="peso" placeholder="Digite seu peso">
-
-        <label for="altura">Altura (m):</label>
-        <input type="number" step="0.01" id="altura" placeholder="Digite sua altura">
-
-        <button onclick="calcularIMC()">Calcular IMC e Dieta</button>
-
-        <p id="resultado"></p>
-        <p id="dieta"></p>
-    </div>
-    <fieldset>
-    </fieldset>
     <div class="container"> 
         <label for="peso0">Peso(kg):</label>
         <input type="number" id="peso0" placeholder="Digite seu peso">
@@ -170,41 +141,6 @@
             </tr>
         </table>
     </div>
-
-    <script>
-        function calcularIMC() {
-            let peso = parseFloat(document.getElementById("peso").value);
-            let altura = parseFloat(document.getElementById("altura").value);
-
-            if (isNaN(peso) || isNaN(altura) || altura <= 0 || peso <= 0) {
-                document.getElementById("resultado").innerHTML = "Por favor, insira valores válidos.";
-                document.getElementById("dieta").innerHTML = "";
-                return;
-            }
-
-            let imc = peso / (altura * altura);
-            let classificacao = "";
-            let dieta = "";
-
-            if (imc < 18.5) {
-                classificacao = "Abaixo do peso";
-                dieta = "Recomendação: Consuma mais proteínas (frango, ovos, peixes), carboidratos saudáveis (arroz, batata, aveia) e gorduras boas (abacate, azeite, castanhas). Faça musculação.";
-            } else if (imc >= 18.5 && imc < 24.9) {
-                classificacao = "Peso ideal";
-                dieta = "Recomendação: Mantenha uma alimentação equilibrada com proteínas, carboidratos e gorduras saudáveis. Pratique exercícios regularmente.";
-            } else if (imc >= 25 && imc < 29.9) {
-                classificacao = "Sobrepeso";
-                dieta = "Recomendação: Reduza açúcares e carboidratos refinados. Priorize proteínas magras, vegetais e gorduras saudáveis. Faça exercícios regularmente.";
-            } else {
-                classificacao = "Obesidade";
-                dieta = "Recomendação: Consulte um nutricionista. Evite ultraprocessados, consuma mais fibras e proteínas e pratique atividades físicas.";
-            }
-
-            document.getElementById("resultado").innerHTML = `Seu IMC é: ${imc.toFixed(2)} (${classificacao})`;
-            document.getElementById("dieta").innerHTML = dieta;
-        
-        }
-    </script>
     <script>
         function calcularAgua(peso0) {
         if (peso0 <= 0 || isNaN(peso0)) {
@@ -223,7 +159,7 @@
     <div style="text-align: center;">
         <img src="img/jpg/th.jpeg">
     </div>
-     <img src="img/jpg/th (1).jpeg" style="position: absolute; bottom: 210px; left: 48px;" width="490" height="300">
+
     <h2>Calculadora de Carboidratos</h2>
 
     <label for="alimento">Escolha um alimento:</label>
@@ -285,6 +221,7 @@
             document.getElementById("resultado2").innerText = "Total de carboidratos: " + totalCarboidratos.toFixed(2) + "g";
         }
     </script>
+    
  <a href="index4.html" title="Calculadora DE MACRONUTRIENTE" >2</a>
  <a href="index.html">Home</a>
 
